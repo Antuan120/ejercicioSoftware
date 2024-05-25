@@ -1,11 +1,13 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -23,25 +25,22 @@ header h1 {
     margin: 0;
 }
 
-.dropdown {
-    margin-bottom: 20px;
-}
-
-.dropdown h3 {
-    margin: 0;
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
-    background-color: #ddd;
-    padding: 10px;
-    border-radius: 5px;
-    user-select: none;
+    border-radius: 8px;
 }
 
-.dropdown-content {
-    display: none;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-top: 10px;
+button:hover {
+    background-color: #45a049;
 }
 
 .mission-vision {
@@ -72,15 +71,9 @@ select {
     box-sizing: border-box;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
+input[type="file"] {
     border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
+    margin-bottom: 15px;
 }
 
 footer {
@@ -100,3 +93,117 @@ footer p {
     margin: 0 auto 20px;
     display: block;
 }
+
+.dropdown {
+    margin-bottom: 20px;
+}
+
+.dropdown h3 {
+    margin: 0;
+    cursor: pointer;
+    background-color: #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.dropdown-content {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+/* Agregamos estilos para el encabezado similar a Facebook */
+header {
+    background-color: #3b5998; /* Color característico de Facebook */
+    color: #fff;
+    padding: 10px;
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Ajustamos el tamaño del logo */
+#logoContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Añadimos margen inferior */
+}
+
+#logo {
+    width: 150px; /* Ajustamos el ancho del logo */
+    height: auto; /* Mantenemos la proporción de aspecto */
+    margin-right: 10px; /* Agregamos margen a la derecha del logo */
+}
+
+#companyName {
+    font-size: 24px; /* Tamaño del texto del nombre de la empresa */
+}
+
+#additionalInfo, #socialMedia {
+    margin-top: 40px; /* Añadimos margen superior */
+}
+
+#additionalInfo h2, #socialMedia h2 {
+    margin-bottom: 10px; /* Añadimos margen inferior */
+}
+
+#additionalInfo p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+#additionalInfo ul, #socialMedia ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#additionalInfo ul li, #socialMedia ul li {
+    margin-bottom: 5px;
+}
+
+#socialMedia ul li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#socialMedia ul li img {
+    width: 40px; /* Ajustamos el tamaño de los logotipos de las redes sociales */
+    height: auto;
+    border-radius: 50%; /* Redondeamos los bordes */
+}
+
+#socialMedia ul li img:hover {
+    opacity: 0.7; /* Cambiamos la opacidad al pasar el mouse sobre los logotipos */
+}
+
+
+
+#mostrarAreasBtn,
+#mostrarFormularioBtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#mostrarAreasBtn:hover,
+#mostrarFormularioBtn:hover {
+    background-color: #45a049;
+}
+

@@ -8,118 +8,52 @@
 </head>
 <body>
     <header>
-        <h1>Mi Empresa</h1>
+        <div id="nav">
+            <button id="mostrarAreasBtn">Ver Áreas</button>
+            <button id="mostrarFormularioBtn">Ver Formulario</button>
+        </div>
     </header>
 
-    <div class="container">
-        <div class="mission-vision">
-            <h2>Misión</h2>
-            <p>Nuestra misión es proporcionar soluciones innovadoras y de alta calidad que satisfagan las necesidades de nuestros clientes, contribuyendo al éxito y crecimiento de sus proyectos.</p>
-        </div>
-
-        <div class="mission-vision">
-            <h2>Visión</h2>
-            <p>Buscamos ser líderes en el mercado de desarrollo de software, destacando por nuestra excelencia, compromiso y capacidad para ofrecer resultados sobresalientes en cada proyecto que emprendemos.</p>
-        </div>
-
-        <div class="dropdown">
-            <h3 onclick="toggleDropdown('area1')">Ver Área 1</h3>
-            <div id="area1" class="dropdown-content">
-                <h4>Desarrollo Web</h4>
-                <p>Nuestro equipo de desarrollo web está especializado en la creación de sitios web modernos, 
-                atractivos y funcionales. Utilizamos las últimas tecnologías y mejores prácticas para garantizar 
-                la calidad y eficiencia en cada proyecto. Ya sea que necesites un sitio web corporativo, una tienda en 
-                línea o una aplicación web a medida, estamos aquí para ayudarte a hacer realidad tu visión.</p>
-                <p>Algunas de nuestras áreas de expertise incluyen:</p>
+    <div class="container" id="mainContent">
+        <!-- Contenido inicial (Misión y Visión) -->
+        <section id="home">
+            <div id="logoContainer">
+                <img src="img/logoEmpresa.jpg" alt="Logo de Mi Empresa" id="logo">
+                <span id="companyName">ProfileLink</span>
+            </div>
+            <div class="mission-vision">
+                <h2>Misión</h2>
+                <p>Nuestra misión es proporcionar soluciones innovadoras y de alta calidad que satisfagan las necesidades de nuestros clientes, contribuyendo al éxito y crecimiento de sus proyectos.</p>
+            </div>
+            <div class="mission-vision">
+                <h2>Visión</h2>
+                <p>Buscamos ser líderes en el mercado de desarrollo de software, destacando por nuestra excelencia, compromiso y capacidad para ofrecer resultados sobresalientes en cada proyecto que emprendemos.</p>
+            </div>
+            <div id="additionalInfo">
+                <h2>¿Quiénes Somos?</h2>
+                <p>Somos una empresa comprometida con la innovación y la excelencia en el desarrollo de soluciones tecnológicas para nuestros clientes. Nuestro equipo está formado por profesionales apasionados por la tecnología y la creación de soluciones que marcan la diferencia.</p>
+                <h2>Valores</h2>
                 <ul>
-                    <li>Desarrollo frontend con HTML, CSS y JavaScript</li>
-                    <li>Desarrollo backend con Node.js, Python, PHP, etc.</li>
-                    <li>Frameworks y bibliotecas populares como React, Angular y Vue.js</li>
-                    <li>Integración de APIs y servicios web</li>
-                    <li>Optimización de rendimiento y SEO</li>
-                    <li>Y mucho más...</li>
+                    <li>Innovación</li>
+                    <li>Excelencia</li>
+                    <li>Compromiso</li>
+                    <li>Integridad</li>
                 </ul>
             </div>
-        </div>
-
-        <div class="dropdown">
-            <h3 onclick="toggleDropdown('area2')">Ver Área 2</h3>
-            <div id="area2" class="dropdown-content">
-                <h4>Desarrollo Móvil</h4>
-                <p>Nuestro equipo de desarrollo móvil se especializa en la creación de aplicaciones móviles para iOS y Android 
-                    que brinden experiencias excepcionales a los usuarios. Desde aplicaciones nativas hasta híbridas y progresivas, 
-                    tenemos la experiencia y el conocimiento necesarios para llevar tu idea desde el concepto hasta la realidad.</p>
-                    <p>Algunos de nuestros servicios incluyen:</p>
-                 <ul>
-                  <li>Desarrollo de aplicaciones nativas para iOS y Android</li>
-                  <li>Desarrollo de aplicaciones híbridas con frameworks como React Native y Ionic</li>
-                  <li>Integración de funcionalidades avanzadas como geolocalización, notificaciones push y pagos móviles</li>
-                  <li>Optimización de rendimiento y compatibilidad con diferentes dispositivos</li>
-                  <li>Publicación en las tiendas de aplicaciones de Apple App Store y Google Play Store</li>
-                  <li>Y mucho más...</li>
-            </ul>
-        </div>
-        </div>
-
-        <div class="dropdown">
-            <h3 onclick="toggleDropdown('area3')">Ver Área 3</h3>
-            <div id="area3" class="dropdown-content">
-                <h4>Consultoría y Servicios Personalizados</h4>
-                <p>Además del desarrollo de software, ofrecemos servicios de consultoría y soluciones personalizadas adaptadas a las 
-                    necesidades específicas de tu negocio. Nuestro equipo de expertos está listo para colaborar contigo en todas las 
-                    etapas de tu proyecto, desde la planificación y el diseño hasta la implementación y el soporte continuo.</p>
-                    <ul>
-                        <li>Consultoría tecnológica y estratégica</li>
-                        <li>Análisis de requerimientos y definición de objetivos</li>
-                        <li>Diseño de arquitectura de software</li>
-                        <li>Desarrollo de soluciones a medida</li>
-                        <li>Integración de sistemas y migración de datos</li>
-                        <li>Soporte técnico y mantenimiento</li>
-                        <li>Y mucho más...</li>
-                    </ul>
+            <div id="socialMedia">
+                <h2>Síguenos en Redes Sociales</h2>
+                <ul>
+                    <li><a href="#"><img src="img/facebook.jpg" alt="Facebook"></a></li>
+                    <li><a href="#"><img src="img/twitter.jpg" alt="Twitter"></a></li>
+                    <li><a href="#"><img src="img/linkedin.jpg" alt="LinkedIn"></a></li>
+                    <li><a href="#"><img src="img/instagram.jpg" alt="Instagram"></a></li>                    
+                </ul>
             </div>
-        </div>
-
-        <form id="postulacionForm" enctype="multipart/form-data">
-            <label for="nombreCompleto">Nombre completo:</label>
-            <input type="text" id="nombreCompleto" required>
-        
-            <label for="profesion">Profesión:</label>
-            <input type="text" id="profesion" required>
-        
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" pattern="[0-9]{10}" required>
-        
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" id="correo" required>
-        
-            <label for="linkedin">Perfil de LinkedIn:</label>
-            <input type="url" id="linkedin">
-        
-            <label for="imagen">Subir imagen:</label>
-            <input type="file" id="imagen" accept="image/*" required>
-        
-            <label for="habilidades">Habilidades (máximo 3):</label><br>
-            <input type="checkbox" id="html" name="habilidades" value="HTML" onclick="limitarSeleccion('html')">
-            <label for="html">HTML</label>
-            <input type="checkbox" id="css" name="habilidades" value="CSS" onclick="limitarSeleccion('css')">
-            <label for="css">CSS</label>
-            <input type="checkbox" id="git" name="habilidades" value="Git" onclick="limitarSeleccion('git')">
-            <label for="git">Git</label>
-            <input type="checkbox" id="javascript" name="habilidades" value="JavaScript" onclick="limitarSeleccion('javascript')">
-            <label for="javascript">JavaScript</label>
-            <input type="checkbox" id="ajax" name="habilidades" value="AJAX" onclick="limitarSeleccion('ajax')">
-            <label for="ajax">AJAX</label>
-            <input type="checkbox" id="react" name="habilidades" value="React" onclick="limitarSeleccion('react')">
-            <label for="react">React</label>
-        
-            <button type="submit">Enviar</button>
-        </form>
-        
+        </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 Mi Empresa</p>
+        <p>&copy; 2024 ProfileLink</p>
     </footer>
     <script src="js/logica.js"></script>
 </body>

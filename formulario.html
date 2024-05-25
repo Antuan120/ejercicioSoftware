@@ -1,0 +1,39 @@
+<section id="formulario">
+    <form id="postulacionForm" enctype="multipart/form-data">
+        <label for="nombreCompleto">Nombre completo:</label>
+        <input type="text" id="nombreCompleto" required>
+
+        <label for="profesion">Profesión:</label>
+        <input type="text" id="profesion" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" pattern="[0-9]{10}" required>
+
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" required>
+
+        <label for="linkedin">Perfil de LinkedIn:</label>
+        <input type="url" id="linkedin">
+
+        <label for="imagen">Subir imagen:</label>
+        <input type="file" id="imagen" accept="image/*" required>
+
+        <label for="habilidades">Habilidades (máximo 3):</label><br>
+        <input type="checkbox" id="html" name="habilidades" value="HTML" onclick="limitarSeleccion('html')">
+        <label for="html">HTML</label>
+        <input type="checkbox" id="css" name="habilidades" value="CSS" onclick="limitarSeleccion('css')">
+        <label for="css">CSS</label>
+        <input type="checkbox" id="git" name="habilidades" value="Git" onclick="limitarSeleccion('git')">
+        <label for="git">Git</label>
+        <input type="checkbox" id="javascript" name="habilidades" value="JavaScript" onclick="limitarSeleccion('javascript')">
+        <label for="javascript">JavaScript</label>
+        <input type="checkbox" id="ajax" name="habilidades" value="AJAX" onclick="limitarSeleccion('ajax')">
+        <label for="ajax">AJAX</label>
+        <input type="checkbox" id="react" name="habilidades" value="React" onclick="limitarSeleccion('react')">
+        <label for="react">React</label>
+
+        <button type="submit">Enviar</button>
+        <!-- Botón de Volver -->
+    <button class="volver-button" onclick="loadInitialContent('mainContent')">Volver</button>
+    </form>
+</section>

@@ -1,40 +1,40 @@
-document.getElementById('postulacionForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    var nombreCompleto = document.getElementById('nombreCompleto').value;
-    var profesion = document.getElementById('profesion').value;
-    var telefono = document.getElementById('telefono').value;
-    var correo = document.getElementById('correo').value;
-    var linkedin = document.getElementById('linkedin').value;
-    var habilidades = obtenerHabilidadesSeleccionadas();
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('mostrarAreasBtn').addEventListener('click', function() {
+        loadContent('areas.html', 'mainContent');
+    });
 
-    var imagen = document.getElementById('imagen').files[0];
-    var reader = new FileReader();
-    reader.onload = function(event) {
-        var imagenBase64 = event.target.result;
-        var datosPostulacion = '<img src="' + imagenBase64 + '\n">'+
-                               '\nNombre completo: ' + nombreCompleto + '\n' +
-                               'Profesión: ' + profesion + '\n' +
-                               'Teléfono: ' + telefono + '\n' +
-                               'Correo electrónico: ' + correo + '\n' +
-                               'Perfil de LinkedIn: ' + linkedin + '\n' +
-                               'Habilidades: ' + habilidades;
-                               
-
-        var ventanaPostulacion = window.open('', 'Datos de Postulación', 'width=1020,height=850');
-        ventanaPostulacion.document.write('<pre>' + datosPostulacion + '</pre>');
-    };
-    reader.readAsDataURL(imagen);
+    document.getElementById('mostrarFormularioBtn').addEventListener('click', function() {
+        loadContent('formulario.html', 'mainContent');
+    });
 });
 
-function obtenerHabilidadesSeleccionadas() {
-    var habilidadesSeleccionadas = [];
-    var checkboxes = document.getElementsByName('habilidades');
-    checkboxes.forEach(function(checkbox) {
-        if (checkbox.checked) {
-            habilidadesSeleccionadas.push(checkbox.value);
+function loadContent(url, targetId) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            document.getElementById(targetId).innerHTML = xhr.responseText;
+        } else if (xhr.readyState === 4) {
+            alert('Error al cargar el contenido. Por favor, inténtalo de nuevo más tarde.');
         }
-    });
-    return habilidadesSeleccionadas.join(', ');
+    };
+    xhr.send();
+}
+
+function loadInitialContent(targetId) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'index.html', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var tempDiv = document.createElement('div');
+            tempDiv.innerHTML = xhr.responseText;
+            var initialContent = tempDiv.querySelector('#home').outerHTML;
+            document.getElementById(targetId).innerHTML = initialContent;
+        } else if (xhr.readyState === 4) {
+            alert('Error al cargar el contenido inicial. Por favor, inténtalo de nuevo más tarde.');
+        }
+    };
+    xhr.send();
 }
 
 function toggleDropdown(areaId) {
@@ -45,8 +45,9 @@ function toggleDropdown(areaId) {
         content.style.display = "none";
     }
 }
+
 let seleccionados = 0;
-    
+
 function limitarSeleccion(checkboxId) {
     const checkbox = document.getElementById(checkboxId);
     if (checkbox.checked) {
@@ -60,3 +61,30 @@ function limitarSeleccion(checkboxId) {
         seleccionados--;
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('postulacionForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar el envío por defecto del formulario
+        
+        // Obtener los datos del formulario
+        var formData = new FormData(this);
+        
+        // Realizar la petición AJAX
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'ruta/a/tu/servidor.php', true); // Reemplaza 'ruta/a/tu/servidor.php' con la ruta de tu servidor
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                // La petición fue exitosa
+                alert('¡Formulario enviado con éxito!');
+            } else {
+                // Hubo un error en la petición
+                alert('Error al enviar el formulario. Por favor, inténtalo de nuevo más tarde.');
+            }
+        };
+        xhr.onerror = function() {
+            // Hubo un error de conexión
+            alert('Error de conexión. Por favor, revisa tu conexión a internet e inténtalo de nuevo.');
+        };
+        xhr.send(formData);
+    });
+});
