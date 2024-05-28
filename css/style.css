@@ -118,7 +118,7 @@ footer p {
 .hidden {
     display: none;
 }
-/* Agregamos estilos para el encabezado similar a Facebook */
+
 header {
     background-color: #3b5998; /* Color característico de Facebook */
     color: #fff;
@@ -205,5 +205,30 @@ header {
 #mostrarAreasBtn:hover,
 #mostrarFormularioBtn:hover {
     background-color: #45a049;
+}
+
+.perfil {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.perfil img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.perfil h2 {
+    margin-bottom: 10px;
+}
+
+.perfil p {
+    margin: 5px 0;
 }
 

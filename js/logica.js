@@ -61,30 +61,3 @@ function limitarSeleccion(checkboxId) {
         seleccionados--;
     }
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('postulacionForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evitar el envío por defecto del formulario
-        
-        // Obtener los datos del formulario
-        var formData = new FormData(this);
-        
-        // Realizar la petición AJAX
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'ruta/a/tu/servidor.php', true); // Reemplaza 'ruta/a/tu/servidor.php' con la ruta de tu servidor
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                // La petición fue exitosa
-                alert('¡Formulario enviado con éxito!');
-            } else {
-                // Hubo un error en la petición
-                alert('Error al enviar el formulario. Por favor, inténtalo de nuevo más tarde.');
-            }
-        };
-        xhr.onerror = function() {
-            // Hubo un error de conexión
-            alert('Error de conexión. Por favor, revisa tu conexión a internet e inténtalo de nuevo.');
-        };
-        xhr.send(formData);
-    });
-});
