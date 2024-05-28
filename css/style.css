@@ -21,10 +21,6 @@ header {
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-}
-
 button {
     background-color: #4CAF50;
     color: white;
@@ -45,10 +41,6 @@ button:hover {
 
 .mission-vision {
     margin-bottom: 20px;
-}
-
-.mission-vision h2 {
-    margin-top: 0;
 }
 
 label {
@@ -130,30 +122,28 @@ header {
     align-items: center;
 }
 
-
-/* Ajustamos el tamaño del logo */
 #logoContainer {
     display: flex;
     align-items: center;
-    margin-bottom: 20px; /* Añadimos margen inferior */
+    margin-bottom: 20px;
 }
 
 #logo {
-    width: 150px; /* Ajustamos el ancho del logo */
-    height: auto; /* Mantenemos la proporción de aspecto */
-    margin-right: 10px; /* Agregamos margen a la derecha del logo */
+    width: 150px;
+    height: auto;
+    margin-right: 10px;
 }
 
 #companyName {
-    font-size: 24px; /* Tamaño del texto del nombre de la empresa */
+    font-size: 24px;
 }
 
 #additionalInfo, #socialMedia {
-    margin-top: 40px; /* Añadimos margen superior */
+    margin-top: 40px;
 }
 
 #additionalInfo h2, #socialMedia h2 {
-    margin-bottom: 10px; /* Añadimos margen inferior */
+    margin-bottom: 10px;
 }
 
 #additionalInfo p {
@@ -176,16 +166,14 @@ header {
 }
 
 #socialMedia ul li img {
-    width: 40px; /* Ajustamos el tamaño de los logotipos de las redes sociales */
+    width: 40px;
     height: auto;
-    border-radius: 50%; /* Redondeamos los bordes */
+    border-radius: 50%;
 }
 
 #socialMedia ul li img:hover {
-    opacity: 0.7; /* Cambiamos la opacidad al pasar el mouse sobre los logotipos */
+    opacity: 0.7;
 }
-
-
 
 #mostrarAreasBtn,
 #mostrarFormularioBtn {
@@ -206,29 +194,3 @@ header {
 #mostrarFormularioBtn:hover {
     background-color: #45a049;
 }
-
-.perfil {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fff;
-    text-align: center;
-}
-
-.perfil img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-.perfil h2 {
-    margin-bottom: 10px;
-}
-
-.perfil p {
-    margin: 5px 0;
-}
-

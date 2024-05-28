@@ -37,15 +37,6 @@ function loadInitialContent(targetId) {
     xhr.send();
 }
 
-function toggleDropdown(areaId) {
-    var content = document.getElementById(areaId);
-    if (content.style.display === "none" || content.style.display === "") {
-        content.style.display = "block";
-    } else {
-        content.style.display = "none";
-    }
-}
-
 let seleccionados = 0;
 
 function limitarSeleccion(checkboxId) {
@@ -59,5 +50,41 @@ function limitarSeleccion(checkboxId) {
         }
     } else {
         seleccionados--;
+    }
+}
+
+function guardarDatos(event) {
+    event.preventDefault();
+    
+    const nombreCompleto = document.getElementById('nombreCompleto').value;
+    const profesion = document.getElementById('profesion').value;
+    const telefono = document.getElementById('telefono').value;
+    const correo = document.getElementById('correo').value;
+    const linkedin = document.getElementById('linkedin').value;
+    
+    const habilidades = [];
+    document.querySelectorAll('input[name="habilidades"]:checked').forEach((checkbox) => {
+        habilidades.push(checkbox.value);
+    });
+
+    const imagen = document.getElementById('imagen').files[0];
+    const reader = new FileReader();
+    
+    reader.onloadend = function() {
+        localStorage.setItem('nombreCompleto', nombreCompleto);
+        localStorage.setItem('profesion', profesion);
+        localStorage.setItem('telefono', telefono);
+        localStorage.setItem('correo', correo);
+        localStorage.setItem('linkedin', linkedin);
+        localStorage.setItem('habilidades', JSON.stringify(habilidades));
+        localStorage.setItem('imagen', reader.result);
+
+        window.open('mostrar_datos.html', '_blank');
+    };
+    
+    if (imagen) {
+        reader.readAsDataURL(imagen);
+    } else {
+        alert('Por favor, sube una imagen.');
     }
 }
