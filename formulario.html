@@ -8,7 +8,7 @@
 </head>
 <body>
     <section id="formulario">
-        <form id="postulacionForm" onsubmit="guardarDatos(event)">
+        <form id="postulacionForm" action="guardar_datos.php" method="post">
             <label for="nombreCompleto">Nombre completo:</label>
             <input type="text" name="nombreCompleto" id="nombreCompleto" required>
 
@@ -24,21 +24,18 @@
             <label for="linkedin">Perfil de LinkedIn:</label>
             <input type="url" name="linkedin" id="linkedin">
 
-            <label for="imagen">Subir imagen:</label>
-            <input type="file" name="imagen" id="imagen" accept="image/*" required>
-
             <label for="habilidades">Habilidades (máximo 3):</label><br>
-            <input type="checkbox" id="html" name="habilidades" value="HTML" onclick="limitarSeleccion('html')">
+            <input type="checkbox" id="html" name="habilidades[]" value="HTML" onclick="limitarSeleccion('html')">
             <label for="html">HTML</label>
-            <input type="checkbox" id="css" name="habilidades" value="CSS" onclick="limitarSeleccion('css')">
+            <input type="checkbox" id="css" name="habilidades[]" value="CSS" onclick="limitarSeleccion('css')">
             <label for="css">CSS</label>
-            <input type="checkbox" id="git" name="habilidades" value="Git" onclick="limitarSeleccion('git')">
+            <input type="checkbox" id="git" name="habilidades[]" value="Git" onclick="limitarSeleccion('git')">
             <label for="git">Git</label>
-            <input type="checkbox" id="javascript" name="habilidades" value="JavaScript" onclick="limitarSeleccion('javascript')">
+            <input type="checkbox" id="javascript" name="habilidades[]" value="JavaScript" onclick="limitarSeleccion('javascript')">
             <label for="javascript">JavaScript</label>
-            <input type="checkbox" id="ajax" name="habilidades" value="AJAX" onclick="limitarSeleccion('ajax')">
+            <input type="checkbox" id="ajax" name="habilidades[]" value="AJAX" onclick="limitarSeleccion('ajax')">
             <label for="ajax">AJAX</label>
-            <input type="checkbox" id="react" name="habilidades" value="React" onclick="limitarSeleccion('react')">
+            <input type="checkbox" id="react" name="habilidades[]" value="React" onclick="limitarSeleccion('react')">
             <label for="react">React</label>
 
             <button type="submit">Enviar</button>
