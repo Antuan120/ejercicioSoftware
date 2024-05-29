@@ -24,8 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             VALUES ('$nombreCompleto', '$profesion', '$telefono', '$correo', '$linkedin', '$habilidades')";
 
     if ($conn->query($sql) === TRUE) {
-        // Redirigir a mostrar_datos.html
-        header("Location: mostrar_datos.html");
+        header("Location: mostrar_datos.php"); // Redirigir a mostrar_datos.php
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

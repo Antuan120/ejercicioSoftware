@@ -8,7 +8,7 @@
 </head>
 <body>
     <section id="formulario">
-        <form id="postulacionForm" action="guardar_datos.php" method="post">
+        <form id="postulacionForm" action="guardar_datos.php" method="post" enctype="multipart/form-data">
             <label for="nombreCompleto">Nombre completo:</label>
             <input type="text" name="nombreCompleto" id="nombreCompleto" required>
 
@@ -23,6 +23,9 @@
 
             <label for="linkedin">Perfil de LinkedIn:</label>
             <input type="url" name="linkedin" id="linkedin">
+
+            <label for="imagen">Subir Imagen:</label>
+            <input type="file" name="imagen" id="imagen" accept="image/*" required>
 
             <label for="habilidades">Habilidades (máximo 3):</label><br>
             <input type="checkbox" id="html" name="habilidades[]" value="HTML" onclick="limitarSeleccion('html')">

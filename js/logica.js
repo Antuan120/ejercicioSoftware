@@ -67,24 +67,24 @@ function guardarDatos(event) {
         habilidades.push(checkbox.value);
     });
 
-    const formData = new FormData();
-    formData.append('nombreCompleto', nombreCompleto);
-    formData.append('profesion', profesion);
-    formData.append('telefono', telefono);
-    formData.append('correo', correo);
-    formData.append('linkedin', linkedin);
-    formData.append('habilidades', JSON.stringify(habilidades));
+    const imagen = document.getElementById('imagen').files[0];
+    const reader = new FileReader();
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'guardar_datos.php', true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            // Redirigir a la página de mostrar datos después de guardar exitosamente
-            window.location.href = 'mostrar_datos.html';
-        } else if (xhr.readyState === 4) {
-            alert('Error al guardar los datos. Por favor, inténtalo de nuevo.');
-        }
+    reader.onloadend = function() {
+        localStorage.setItem('nombreCompleto', nombreCompleto);
+        localStorage.setItem('profesion', profesion);
+        localStorage.setItem('telefono', telefono);
+        localStorage.setItem('correo', correo);
+        localStorage.setItem('linkedin', linkedin);
+        localStorage.setItem('habilidades', JSON.stringify(habilidades));
+        localStorage.setItem('imagen', reader.result);
+
+        window.open('mostrar_datos.html', '_blank');
     };
-    xhr.send(formData);
-}
 
+    if (imagen) {
+        reader.readAsDataURL(imagen);
+    } else {
+        alert('Por favor, sube una imagen.');
+    }
+}
