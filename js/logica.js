@@ -6,7 +6,12 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('mostrarFormularioBtn').addEventListener('click', function() {
         loadContent('formulario.html', 'mainContent');
     });
+    document.getElementById('mostrarPostuladosBtn').addEventListener('click', function() {
+        loadContent('postulados.html', 'mainContent');
+    });
+    
 });
+
 
 function loadContent(url, targetId) {
     var xhr = new XMLHttpRequest();
@@ -14,12 +19,16 @@ function loadContent(url, targetId) {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             document.getElementById(targetId).innerHTML = xhr.responseText;
+            if (url === 'postulados.html') {
+                cargarPostulados(); // Llama a la función para cargar los postulados cuando se carga la página postulados.html
+            }
         } else if (xhr.readyState === 4) {
             alert('Error al cargar el contenido. Por favor, inténtalo de nuevo más tarde.');
         }
     };
     xhr.send();
 }
+
 
 function loadInitialContent(targetId) {
     var xhr = new XMLHttpRequest();
@@ -28,7 +37,7 @@ function loadInitialContent(targetId) {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var tempDiv = document.createElement('div');
             tempDiv.innerHTML = xhr.responseText;
-            var initialContent = tempDiv.querySelector('#home').outerHTML;
+            var initialContent = tempDiv.querySelector('#mainContent').outerHTML;
             document.getElementById(targetId).innerHTML = initialContent;
         } else if (xhr.readyState === 4) {
             alert('Error al cargar el contenido inicial. Por favor, inténtalo de nuevo más tarde.');
@@ -36,6 +45,8 @@ function loadInitialContent(targetId) {
     };
     xhr.send();
 }
+
+
 
 let seleccionados = 0;
 

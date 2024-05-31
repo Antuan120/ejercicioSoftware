@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-$sql = "SELECT nombre_completo, profesion, telefono, correo, linkedin, habilidades FROM postulaciones ORDER BY id DESC LIMIT 1";
+$sql = "SELECT nombre_completo, profesion, telefono, correo, linkedin, habilidades, imagen FROM postulaciones ORDER BY id DESC LIMIT 1";
 $result = $conn->query($sql);
 
 $data = [];
@@ -40,6 +40,8 @@ $conn->close();
         <h2>Datos del Formulario</h2>
         <?php foreach ($data as $item): ?>
         <div class="card">
+             <img src="<?php echo $item['imagen']; ?>" alt="Foto de perfil" style="width:200px;height:200px;border-radius:50%;">
+
             <p><strong>Nombre completo:</strong> <?php echo $item['nombre_completo']; ?></p>
             <p><strong>Profesión:</strong> <?php echo $item['profesion']; ?></p>
             <p><strong>Teléfono:</strong> <?php echo $item['telefono']; ?></p>
@@ -48,6 +50,8 @@ $conn->close();
             <p><strong>Habilidades:</strong> <?php echo implode(', ', $item['habilidades']); ?></p>
         </div>
         <?php endforeach; ?>
+        <button onclick="window.location.href = 'index.html';">Volver a la Página Principal</button>
+        <button onclick="window.open('http://localhost/ejercicioSoftware2.0/ejercicioSoftware/postulados.html', '_blank');">Ver Lista de Postulados</button>
     </div>
 </body>
 </html>

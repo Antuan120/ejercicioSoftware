@@ -20,8 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $linkedin = $_POST['linkedin'];
     $habilidades = json_encode($_POST['habilidades']);
 
-    $sql = "INSERT INTO postulaciones (nombre_completo, profesion, telefono, correo, linkedin, habilidades)
-            VALUES ('$nombreCompleto', '$profesion', '$telefono', '$correo', '$linkedin', '$habilidades')";
+    // Manejo de la imagen
+    $target_dir = "uploads/";
+    $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
+    move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file);
+
+    $sql = "INSERT INTO postulaciones (nombre_completo, profesion, telefono, correo, linkedin, habilidades, imagen)
+            VALUES ('$nombreCompleto', '$profesion', '$telefono', '$correo', '$linkedin', '$habilidades', '$target_file')";
 
     if ($conn->query($sql) === TRUE) {
         header("Location: mostrar_datos.php"); // Redirigir a mostrar_datos.php

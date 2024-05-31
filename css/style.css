@@ -163,3 +163,113 @@ header {
 #mostrarFormularioBtn:hover {
     background-color: #45a049;
 }
+
+
+
+/* Estilos para la tabla */
+#tablaPostulados {
+    width: 100%; /* Mantenemos el ancho al 100% */
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Estilos para las celdas de encabezado */
+#tablaPostulados th {
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Estilos para las celdas de datos */
+#tablaPostulados td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word; /* Permitimos que los nombres se ajusten automáticamente */
+    max-width: 200px; /* Limitamos el ancho máximo para evitar que la tabla se expanda demasiado */
+}
+
+/* Estilos para filas impares */
+#tablaPostulados tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Estilos para el enlace de Linkedin */
+#tablaPostulados a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Estilos para el enlace de Linkedin al pasar el mouse sobre él */
+#tablaPostulados a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* css/style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-img {
+    width: 200px;  /* Ancho de la imagen */
+    height: 200px; /* Altura de la imagen */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+p {
+    color: #555;
+}
+
+a {
+    color: #009688;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+.button {
+    background-color: #4CAF50; /* Color verde */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+
